@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block login %}logged in{% endblock login %}
+{% block body %}
+<div class="container">
+    <h1>Welcome {{request.user}}</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Books</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pub date</th>
+        </tr>
+        {% if all_book %}
+            {% for book in all_book %}
+                <tr>
+                    <td>{{book.books}}</td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.pub_date}}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <a href="/logout">Logout</a>
+</div>
+{% endblock body %}
