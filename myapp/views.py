@@ -25,6 +25,3 @@ def userlogin(request):
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
-def logoutuser(request):
-    logout(request)
-    return redirect('/login')
